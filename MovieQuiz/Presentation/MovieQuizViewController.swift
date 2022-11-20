@@ -2,30 +2,20 @@ import UIKit
 
 final class MovieQuizViewController: UIViewController {
     // MARK: - Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        show(quiz: convert(model: questions[0]))
-        
-    }
-    
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var textLabel: UILabel!
     @IBOutlet private weak var counterLabel: UILabel!
-    
     
     @IBAction private func yesButtonClicked(_ sender: Any) {
         let currentQuestion = questions[currentQuestionIndex]
         let givenAnswer = true
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
-        
     }
     @IBAction private func noButtonClicked(_ sender: Any) {
         let currentQuestion = questions[currentQuestionIndex]
         let givenAnswer = false
         showAnswerResult(isCorrect: givenAnswer == currentQuestion.correctAnswer)
     }
-    
-    
     
     // для состояния "Вопрос задан"
     struct QuizStepViewModel {
@@ -79,6 +69,15 @@ final class MovieQuizViewController: UIViewController {
         QuizQuestion(image: "Vivarium",
                      text: "Рейтинг этого фильма больше чем 6?",
                      correctAnswer: false)]
+    
+    private var currentQuestionIndex = 0
+    private var correctAnswers = 0
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        show(quiz: convert(model: questions[0]))
+    }
+    
 
     private func show(quiz step: QuizStepViewModel) {
         imageView.image = step.image
@@ -103,8 +102,6 @@ final class MovieQuizViewController: UIViewController {
                                 question: model.text,
                                 questionNumber: "\(currentQuestionIndex + 1)/\(questions.count)")
     }
-
-    private var currentQuestionIndex = 0
 
     private func showAnswerResult(isCorrect: Bool) {
         
@@ -134,9 +131,6 @@ final class MovieQuizViewController: UIViewController {
             show(quiz: convert(model: questions[currentQuestionIndex]))
         }
     }
-    
-    private var correctAnswers = 0
-    
 }
 
 
