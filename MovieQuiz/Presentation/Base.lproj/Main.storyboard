@@ -61,7 +61,7 @@
                                         <rect key="frame" x="0.0" y="624.5" width="374" height="99.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг этого фильма меньше, чем 5?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgY-IL-2jX" userLabel="Question Label">
-                                                <rect key="frame" x="42" y="13" width="290" height="73.5"/>
+                                                <rect key="frame" x="42" y="0.0" width="290" height="99.5"/>
                                                 <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="23"/>
                                                 <color key="textColor" name="white"/>
                                                 <nil key="highlightedColor"/>
@@ -69,8 +69,8 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="CgY-IL-2jX" secondAttribute="trailing" constant="42" id="JHZ-0u-MEC"/>
-                                            <constraint firstItem="CgY-IL-2jX" firstAttribute="top" secondItem="V6k-I8-IVB" secondAttribute="top" constant="13" id="RVG-KU-qQo"/>
-                                            <constraint firstAttribute="bottom" secondItem="CgY-IL-2jX" secondAttribute="bottom" constant="13" id="faa-5k-RkP"/>
+                                            <constraint firstItem="CgY-IL-2jX" firstAttribute="top" secondItem="V6k-I8-IVB" secondAttribute="top" id="RVG-KU-qQo"/>
+                                            <constraint firstAttribute="bottom" secondItem="CgY-IL-2jX" secondAttribute="bottom" id="faa-5k-RkP"/>
                                             <constraint firstItem="CgY-IL-2jX" firstAttribute="leading" secondItem="V6k-I8-IVB" secondAttribute="leading" constant="42" id="rHy-f4-2ob"/>
                                         </constraints>
                                     </view>
