@@ -17,7 +17,7 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
     private var questionFactory: QuestionFactoryProtocol?
     private var statisticService: StatisticService?
     
-    init(viewController: MovieQuizViewControllerProtocol?) {
+    init(viewController: MovieQuizViewControllerProtocol) {
         
         self.viewController = viewController
         statisticService = StatisticServiceImplementation()
@@ -38,7 +38,7 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
     }
     
     
-    func isLastQuestion() -> Bool {
+    private func isLastQuestion() -> Bool {
         currentQuestionIndex == questionsAmount - 1
     }
     
@@ -64,7 +64,7 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
     func yesButtonClicked() {
         didAnswer(isYes: true)
     }
-     func noButtonClicked() {
+    func noButtonClicked() {
        didAnswer(isYes: false)
    }
     

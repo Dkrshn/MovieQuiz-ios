@@ -71,12 +71,12 @@ final class MovieQuizViewController: UIViewController, MovieQuizViewControllerPr
     }
     
     func showLoadingIndicator() {
-        //activityIndicator.isHidden = false
+        
         activityIndicator.startAnimating()
     }
     
    func hideLoadingIndicator() {
-        //activityIndicator.isHidden = true
+        
         activityIndicator.stopAnimating()
     }
     

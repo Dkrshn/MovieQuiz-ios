@@ -20,8 +20,8 @@ final class MovieQuizUITests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
+        app.terminate()
         app = nil
-       // app.terminate()
     }
     
     func testYesButton() {
@@ -69,6 +69,25 @@ final class MovieQuizUITests: XCTestCase {
         XCTAssertTrue(finishAlert.exists)
         XCTAssertEqual(finishAlert.label, "Этот раунд окончен!")
         XCTAssertTrue(finishAlert.buttons.firstMatch.label == "Сыграть еще раз")
+    }
+    
+    func testAlertDismiss() {
+        
+        for _ in 1...10 {
+            app.buttons["No"].tap()
+            sleep(2)
+        }
+        
+        let finishAlert = app.alerts["Finish Alert"]
+        let indexLabel = app.staticTexts["Index"]
+        finishAlert.buttons.firstMatch.tap()
+        
+        sleep(2)
+        
+        XCTAssertFalse(finishAlert.exists)
+        XCTAssertTrue(indexLabel.label == "1/10")
+        
+        
     }
 
 }
