@@ -21,6 +21,7 @@ struct AlertPresenter: AlertPresenterProtocol {
             result.completion()
             
         })
+        alert.view.accessibilityIdentifier = "Finish Alert"
         alert.addAction(action)
         viewController?.present(alert, animated: true, completion: nil)
     }
